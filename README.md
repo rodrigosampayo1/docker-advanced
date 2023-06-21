@@ -1,4 +1,26 @@
 # docker-advanced
+### Dif RUN, CMD y Entrypoint
+
+### Comandos utiles
+- docker save ImageID > ejemplo.tar #almacena en un archivo la imagen, para migrar a otro lado  
+- docker load < ejemplo.tar # Carga la imagen guardada con docker save
+
+- docker top containerID # para ver los procesos que corren ahi
+
+- docker events #Para ver logs de los contenedores
+
+- docker diff container1 #Para ver las diferencias de como inicia a como esta actualmente
+
+- docker history imagenID #cuanod no hay dockerfile, te permite ver las capas para crear la imagen
+
+- docker pause y docker unpause containerID #Para pausar, como mandar in sigstop al contenedor
+
+- docker search name #Busca imagenes desde CLI
+
+- docker update --restart=unless-stopped containerID
+
+- docker wait #hasta que un contendor termine o muere, y te muestra la salida, y si termino bien o mal (bien es 0)
+
 
 ### Variables de entorno
 - Use -e KEY=value
