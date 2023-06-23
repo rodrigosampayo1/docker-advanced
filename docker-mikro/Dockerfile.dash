@@ -1,0 +1,6 @@
+FROM ubuntu:20.04
+CMD tail -f /dev/null
+
+#docker build -t mikroways/shell-dash -f Dockerfile.dash .
+#docker run --rm --name dash -d mikroways/shell-dash
+#docker exec dash ps -ef

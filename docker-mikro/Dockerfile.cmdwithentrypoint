@@ -1,0 +1,10 @@
+FROM alpine
+ENTRYPOINT ["ping", "-c", "10"]
+CMD ["localhost"]
+
+#docker build -t mikroways/ping . -f Dockerfile.cmdwithentrypoint
+#docker run --rm mikroways/ping 
+##Muestra el comando ping -c 10 localhost
+
+#docker run --rm mikroways/ping www.google.com.ar
+## sobreescribe CMD, entonces el comando es ping -c 10 www.google.com.ar

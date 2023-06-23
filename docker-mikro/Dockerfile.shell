@@ -1,0 +1,3 @@
+FROM alpine
+ENTRYPOINT ping -c 10
+CMD localhost
