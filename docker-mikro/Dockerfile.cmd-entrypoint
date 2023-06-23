@@ -1,0 +1,16 @@
+FROM alpine
+CMD []
+ENTRYPOINT []
+
+#docker build -t mikroways/mute .
+##docker run --rm mikroways/mute
+# Error, se queda esperando comandos
+
+##docker run --rm mikroways/mute hostname
+# Muestra el resultado de ejecutar el comando hostname
+
+##  docker run --rm mikroways/mute echo 'Hola mundo'
+#Muestra hola mundo
+
+## docker run --rm mikroways/mute ping localhost -c 3
+#Corre el comando ping 3 veces

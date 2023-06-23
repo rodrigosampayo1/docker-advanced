@@ -1,0 +1,15 @@
+FROM mikroways/mute
+ENTRYPOINT echo "Hola mundo"
+
+#docker build -t mikroways/mute-with-entrypoint -f Dockerfile.entrypoint .
+#docker run --rm mikroways/mute-with-entrypoint
+
+# Conclusion
+# No permite sobreescribir con el argumento al final de Docker run
+
+#Excepcion
+#docker run --rm --entrypoint hostname mikroways/mute-with-entrypoint
+#Pisa el comando anterior que estabe en Entrypoint "echo "hola mundo", por el comando pasado por docker run
+
+## Conclusion2
+# ENTRYPOINT se utiliza cuando los contenedores se deben comportar de forma exclusiva. Esto es, que los usuarios de la imagen no modifiquen el ejecutable definido. 
