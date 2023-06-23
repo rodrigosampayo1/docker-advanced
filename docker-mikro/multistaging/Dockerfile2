@@ -1,0 +1,13 @@
+FROM ubuntu:20.04 as site
+RUN apt update && apt install -y curl git && \
+    curl -sL \
+      https://github.com/gohugoio/hugo/releases/download/v0.82.0/hugo_extended_0.82.0_Linux-64bit.tar.gz \
+      | tar xzf - -C /usr/local/bin hugo && \
+    git clone https://gitlab.com/mikroways/public/mikroways.net.git /site && \
+    cd /site && \
+    hugo
+FROM nginx:1.19-alpine
+COPY --from=site /site/public /usr/share/nginx/html
+
+#docker build -t mikroways/site .
+#docker run --rm -p 8070:80 mikroways/site

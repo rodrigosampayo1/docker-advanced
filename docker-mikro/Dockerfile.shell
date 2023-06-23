@@ -1,3 +1,6 @@
 FROM alpine
 ENTRYPOINT ping -c 10
 CMD localhost
+
+#docker build -t mikroways/ping-shell -f Dockerfile.shell .
+#docker run mikroways/ping-shell

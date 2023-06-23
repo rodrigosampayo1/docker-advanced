@@ -1,0 +1,16 @@
+FROM php:8.0-apache-buster
+COPY code/ /var/www/html
+RUN apt-get update && \
+  apt-get install -y \
+    libldap2-dev \
+    libpq-dev \
+  && \
+  docker-php-ext-install -j "$(nproc)" \
+        ldap \
+        pdo_mysql \
+        pdo_pgsql
+RUN echo 'memory_limit=512M' > /usr/local/etc/php/conf.d/memory-limit.ini;
+
+#docker build -t mikroways/php-sample -f Dockerfile.multi .
+#docker run --rm -d -p 9090:80 mikroways/php-sample
+#curl localhost:9090
